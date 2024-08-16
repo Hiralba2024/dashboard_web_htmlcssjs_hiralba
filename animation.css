@@ -1,0 +1,64 @@
+@keyframes progress {
+    0% { --percentage: 0; }
+    100% { --percentage: var(--value); }
+  }
+  
+  @property --percentage {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+  }
+
+  [role="progressbar"]{
+    animation: progress 2s 0.5s forwards;
+  }
+  [role="progressbar1"]{
+    animation: progress 2s 0.5s forwards;
+  }
+
+  @keyframes slideIn {
+    from { top: -100px; opacity: 0; }
+    to { top: 0; opacity: 1; }
+}
+
+  .navbar{
+    animation: slideIn 3s ease-in-out;
+  }
+
+  @keyframes grow{
+    from{
+      transform: scaleY(0);
+    }
+  }
+  .fill{
+    animation: grow 2s ease-out forwards;
+  }  
+
+  @keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.project, 
+.contact, .task, 
+.message{
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+.new-client svg path{
+    animation: draw 4s forwards;
+}
+
+.project-release svg path{
+    animation: draw 4s forwards;
+}
